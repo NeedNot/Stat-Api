@@ -1,0 +1,5 @@
+name: Statapi
+version: ${project.version}
+main: net.neednot.StatApi
+api-version: 1.16
+depend: [NBTAPI]
