@@ -16,9 +16,6 @@ public class JsonPlayer {
     public boolean online;
     public double health;
     public int deaths;
-    public int xplevel;
-    public String world;
-    public String[] coords = "None,None,None".split(",");
     public JsonArmor armor = new JsonArmor();
 
 
@@ -42,14 +39,5 @@ public class JsonPlayer {
     }
     public void setArmor(JsonArmor armor) {
         this.armor = armor;
-    }
-    public void setXplevel(int xplevel) {
-        this.xplevel = xplevel;
-    }
-    public void setCoords(String[] coords) {
-        this.coords = coords;
-    }
-    public void setWorld(String world) {
-        this.world = world;
     }
 }

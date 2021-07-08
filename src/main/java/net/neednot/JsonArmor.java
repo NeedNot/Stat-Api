@@ -1,6 +1,5 @@
 package net.neednot;
 
-import de.tr7zw.nbtapi.NBTListCompound;
 import net.neednot.JsonHelmet;
 import net.neednot.JsonChestplate;
 import net.neednot.JsonLeggings;
@@ -8,7 +7,7 @@ import net.neednot.JsonBoots;
 
 public class JsonArmor {
 
-    public JsonHelmet helmet;
+    public JsonHelmet helmet = new JsonHelmet();
     public JsonChestplate chestplate;
     public JsonLeggings leggings;
     public JsonBoots boots;

@@ -6,10 +6,10 @@ import java.util.Map;
 
 public class JsonChestplate {
 
-    public String name = "None";
-    public String type = "None";
-    public String damage = "None";
-    public String[] enchants = "".split("");
+    public String name;
+    public String type;
+    public String damage;
+    public String[] enchants;
 
 
     public void setName(String name) {
