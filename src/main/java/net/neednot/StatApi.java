@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.neednot.listeners.Api;
 import io.javalin.Javalin;
+import org.bukkit.scheduler.BukkitScheduler;
 import org.eclipse.jetty.websocket.server.WebSocketServerFactory;
 
 import net.neednot.JsonData;
@@ -326,42 +327,31 @@ public final class StatApi extends JavaPlugin {
 
             ctx.json(JS);
         });
-        app.get("/whitelist/remove/:uuid", ctx -> {
-            boolean error = false;
-            UUID uuid = UUID.randomUUID();
+        app.get("/whitelist/remove/:name", ctx -> {
 
-            try {
-               uuid = UUID.fromString(ctx.pathParam("uuid"));
-            }
-            catch (IllegalArgumentException e1) {
-                ctx.json("No player found");
-                error = true;
-            }
-            if (!error) {
-                //uuid to player
-                OfflinePlayer player = (OfflinePlayer) Bukkit.getOfflinePlayer(uuid);
+            String name =  ctx.pathParam("name");
 
-                player.setWhitelisted(false);
+            Bukkit.getScheduler().scheduleSyncDelayedTask(plugin , new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "whitelist remove " + name);
+                }
+            }, 20L);
 
-                ctx.json("Unwhitelisted " + player.getName());
-            }
+            ctx.json("unwhitelisted " + name);
+
         });
-        app.get("/whitelist/add/:uuid", ctx -> {
-            UUID uuid;
+        app.get("/whitelist/add/:name", ctx -> {
+            String name =  ctx.pathParam("name");
 
-            try {
-                uuid = UUID.fromString(ctx.pathParam("uuid"));
-            }
-            catch (IllegalArgumentException e1) {
-                ctx.json("No player found");
-                return;
-            }
+            Bukkit.getScheduler().scheduleSyncDelayedTask(plugin , new Runnable() {
+                @Override
+                public void run() {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "whitelist add " + name);
+                }
+            }, 20L);
 
-            //uuid to player
-            OfflinePlayer player = (OfflinePlayer) Bukkit.getOfflinePlayer(uuid);
-
-            player.setWhitelisted(true);
-            ctx.json("whitelisted " + player.getName());
+            ctx.json("whitelisted " + name);
         });
         app.get("/kick/:uuid", ctx -> {
             boolean error = false;
