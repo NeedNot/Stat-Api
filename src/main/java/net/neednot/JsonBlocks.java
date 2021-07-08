@@ -22,7 +22,7 @@ public class JsonBlocks {
         this.type = type;
     }
     public void setPlaced(int placed) {
-     this.placed = placed;
+        this.placed = placed;
     }
     public void setMined(int mined) {
         this.mined = mined;
