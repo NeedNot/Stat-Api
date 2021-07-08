@@ -1,3 +1,4 @@
+
 package net.neednot;
 
 public class JsonError {

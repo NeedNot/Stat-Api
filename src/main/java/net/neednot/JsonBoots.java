@@ -6,10 +6,10 @@ import java.util.Map;
 
 public class JsonBoots {
 
-    public String name;
-    public String type;
-    public String damage;
-    public String[] enchants;
+    public String name = "None";
+    public String type = "None";
+    public String damage = "None";
+    public String[] enchants = "".split("");
 
 
     public void setName(String name) {
