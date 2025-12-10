@@ -1,5 +1,9 @@
-name: Statapi
-version: ${project.version}
-main: net.neednot.StatApi
-api-version: 1.16
+name: StatApi
+version: '2.0'
+main: net.neednot.statApi.StatApi
+api-version: '1.21'
+libraries:
+  - "io.javalin:javalin:6.7.0"
+  - "org.slf4j:slf4j-simple:2.0.17"
+  - "com.fasterxml.jackson.core:jackson-databind:2.13.2"
 depend: [NBTAPI]

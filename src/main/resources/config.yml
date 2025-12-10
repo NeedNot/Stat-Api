@@ -1,0 +1,4 @@
+show-player-armor: false
+show-player-coordinates: false
+api-keys:
+port: 7000
