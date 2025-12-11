@@ -1,6 +1,9 @@
 # Stat API
-_A spigot plugin to expose player stats and server information over a simple HTTP API_
+_A spigot plugin to expose player stats and server information over a simple HTTP API_<br>
 Stat API lets external apps, dashboards or Discord bots access live minecraft server data through endpoints.
+___
+## Installation
+Place the `Stat Api-x.x.jar` along with [NBT API Plugin 2.15.2](https://github.com/tr7zw/Item-NBT-API/releases/tag/2.15.2) into your server's plugins directory and restart the server.
 ___
 ## Features
 * Exposes an HTTP API on a configurable port
